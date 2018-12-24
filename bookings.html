@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script>
+			//Runs if the user accepts the GDPR notice
+			//Hides the notice and stores the decision
+			function acceptGDPR() {
+				document.cookie = "AcceptedGDPR=true"
+				var GDPR = document.getElementById("GDPR");
+				GDPR.style.display = "none";
+			}
+
+			//Checks if the GDPR notice has been accepted
+			//Hides the notice if it has
+			function checkGDPR() {
+				var cookie = document.cookie.split(";")[0];
+				if (cookie == "AcceptedGDPR=true") {
+					GDPR.style.display = "none";
+				}
+			}
+		</script>
+
+		<meta charset="UTF-8"/>
+		<meta name="author" content="Jake Pryce-Jones prycejonesjake@gmail.com"/>
+		<meta name="description" content="Dragon Island Adventures - Official Website"/>
+		<meta name="Geo.name" content="GB"/>
+		<meta name="Geo.placename" content="anglesey"/>
+		<meta name="Geo.position" content="53.3372126;-4.3013755" />
+		<meta name="keywords" content="adventure,adventures,airsoft,airsoft club,anglesey,archery,army surplus,bushcraft,club,dragon,dragon island,free parking,north wales,official website,parking,registered,skirmish,uk,ukara,ukara registered,united kingdom,wales"/>
+		<meta name="Subject" content="About Us"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<link href="css/class.css" type="text/css" rel="stylesheet"/>
+		<link href="css/keyframe.css" type="text/css" rel="stylesheet"/>
+		<link href="css/element.css" type="text/css" rel="stylesheet"/>
+		<link rel="icon" href="img/logo.jpg">
+		<link rel="author" href="humans.txt"/>
+
+		<title>Dragon Island Adventures</title>
+	</head>
+
+	<body onload="checkGDPR()">
+		<div class="banner">
+			<h1>Dragon Island Adventures</h1>
+      <a href="index.html" class="bannerButton">About Us</a>
+			<a href="bookings.html" class="bannerButton">Bookings</a>
+		</div>
+
+		<div class="textBox">
+			<img class="slideshow" src="img/slideshow0.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow1.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow2.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow3.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow4.jpg" width="100%">
+		</div>
+
+		<div id="GDPR" class="banner">
+			<h2>GDPR Notice</h2>
+			<p>This site makes use of Google Analytics and cookies to help improve your user experience.</P>
+			<p>By using this site, you agree to your IP address and information about your browser being stored and processed by Google Analytics.</p>
+			<p>For more information about Google Analytics, visit <a href="https://privacy.google.com/businesses/compliance">https://privacy.google.com/businesses/compliance</a>.</p>
+
+			<button onclick="acceptGDPR()">I Agree</a>
+			<button onclick="window.history.back()">Go Back</a>
+		</div>
+
+		<div class="textBox">
+			<h2>Book Your Adventure</h2>
+			<p>To book your adventure with us, please contact Craig Davies on 07895478634.</p>
+			<p>Make sure you also check out our <a href="https://en-gb.facebook.com/pages/category/Outdoor---Sporting-Goods-Company/Dragon-Island-Adventures-2066114997009764/">Facebook</a> page.</p>
+		</div>
+
+		<div class="banner">
+			<a href="index.html" class="bannerButton">About Us</a>
+			<a href="bookings.html" class="bannerButton">Bookings</a>
+			<br/>
+			<p class="banner">&copy; Copyright Dragon Island Adventures 2019.</p>
+		</div>
+
+		<script>
+			function advanceSlide() {
+				var slide = document.getElementsByClassName("slideshow");
+
+				//Hide all slides
+				for (var i = 0; i < slide.length; i++) {
+					slide[i].style.display = "none";
+				}
+
+				//Show random slide
+				var slideIndex = Math.round((1000 * Math.random()) % (slide.length - 1));
+				console.log(slideIndex);
+				slide[slideIndex].style.display = "block";
+
+				//Time delay
+				setTimeout(advanceSlide, 3000);
+			}
+
+			advanceSlide();
+		</script>
+	</body>
+</html>
