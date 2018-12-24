@@ -46,6 +46,12 @@
 			<a href="bookings.html" class="bannerButton">Bookings</a>
 		</div>
 
+		<div class="textBox">
+			<img class="slideshow" src="img/slideshow0.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow1.jpg" width="100%">
+			<img class="slideshow" src="img/slideshow2.jpg" width="100%">
+		</div>
+
 		<div id="GDPR" class="banner">
 			<h2>GDPR Notice</h2>
 			<p>This site makes use of Google Analytics and cookies to help improve your user experience.</P>
@@ -57,17 +63,13 @@
 		</div>
 
 		<div class="textBox">
-			<div id="slideshow"></div>
-		</div>
-
-		<div class="textBox">
 			<h2>Activities</h2>
 			<p>We have a very large woodland site and offer an exciting range of exciting activities including: archery, air rifle shooting, bushcraft, airsoft and paintball. Perfect for a stag do, team building excercise or birthday party.</p>
 			<p>Our site is also home to <a href="https://ottairsoft.github.io">Over The Top Airsoft Club</a>.</p>
 		</div>
 
 		<div class="mapBox">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2382.337603801656!2d-4.301375484161899!3d53.33721257997712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4864536a316e4011%3A0x1e9298d7159acb48!2sOver+The+Top+Adventures!5e0!3m2!1sen!2suk!4v1516113880899" class="map" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9529.28170439881!2d-4.296011064526367!3d53.33752009812113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x81a56c52d61e89d8!2sDragon+Island+Adventures!5e0!3m2!1sen!2suk!4v1545661077351" class="map" allowfullscreen></iframe>
 		</div>
 
 		<div class="textBox">
@@ -89,9 +91,26 @@
 			<br/>
 			<p class="banner">&copy; Copyright Dragon Island Adventures 2019.</p>
 		</div>
+
+		<script>
+			function advanceSlide() {
+				var slide = document.getElementsByClassName("slideshow");
+
+				//Hide all slides
+				for (var i = 0; i < slide.length; i++) {
+					slide[i].style.display = "none";
+				}
+
+				//Show random slide
+				var slideIndex = Math.round((1000 * Math.random()) % (slide.length - 1));
+				console.log(slideIndex);
+				slide[slideIndex].style.display = "block";
+
+				//Time delay
+				setTimeout(advanceSlide, 5000);
+			}
+
+			advanceSlide();
+		</script>
 	</body>
-
-	<script>
-
-	</script>
 </html>
