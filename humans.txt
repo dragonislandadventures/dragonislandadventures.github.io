@@ -6,6 +6,6 @@ Developer & Webmaster
   Location: United Kingdom
 
 /* SITE */
-Last update: 2018/12/24
+Last update: 2018/12/25
 Standards: CSS3, HTML5, JavaScript, JSON
 Software: Atom, GitHub Desktop
